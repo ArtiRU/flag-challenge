@@ -1,0 +1,34 @@
+:root {
+    --family: 'Nunito Sans', sans-serif;
+
+    --fw-light: 300;
+    --fw-normal: 600;
+    --fw-bold: 800;
+
+    --fs-sm: 14px;
+    --fs-lg: 16px;
+
+    --radius: 0.5rem;
+
+}
+
+body[data-theme='light'] {
+    --text-color: hsl(0, 0%, 100%);
+    --bg-color: hsl(207, 26%, 17%);
+    --el-color: hsl(209, 23%, 22%);
+    --input-color: hsl(0, 0%, 52%);
+
+}
+
+body[data-theme='dark'] {
+    --text-color: hsl(200, 15%, 8%);
+    --bg-color: hsl(0, 0%, 98%);
+    --el-color: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: var(--family);
+    font-weight: var(--fw-light);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}

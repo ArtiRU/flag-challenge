@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('../fonts/NunitoSans-Bold.svg');
+    src: url('../fonts/NunitoSans-Bold.svg') format('woff'),
+    url('../fonts/NunitoSans-Bold.svg') format('truetype'),
+    url('../fonts/NunitoSans-Bold.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('../fonts/NunitoSans-ExtraBold.svg');
+    src: url('../fonts/NunitoSans-ExtraBold.svg') format('woff'),
+    url('../fonts/NunitoSans-ExtraBold.svg') format('truetype'),
+    url('../fonts/NunitoSans-ExtraBold.svg') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('../fonts/NunitoSans-SemiBold.svg');
+    src: url('../fonts/NunitoSans-SemiBold.svg') format('woff'),
+    url('../fonts/NunitoSans-SemiBold.svg') format('truetype'),
+    url('../fonts/NunitoSans-SemiBold.svg') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
