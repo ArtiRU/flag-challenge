@@ -9,26 +9,29 @@
     --fs-lg: 16px;
 
     --radius: 0.5rem;
-
-}
-
-body[data-theme='light'] {
-    --text-color: hsl(0, 0%, 100%);
-    --bg-color: hsl(207, 26%, 17%);
-    --el-color: hsl(209, 23%, 22%);
-    --input-color: hsl(0, 0%, 52%);
-
 }
 
 body[data-theme='dark'] {
+    --text-color: hsl(0, 0%, 100%);
+    --bg-color: hsl(207, 26%, 17%);
+    --el-color: hsl(209, 23%, 22%);
+
+    --shadow: rgba(245, 245, 245, 0.2) 0px 0px 8px;
+}
+
+body[data-theme='light'] {
     --text-color: hsl(200, 15%, 8%);
     --bg-color: hsl(0, 0%, 98%);
     --el-color: hsl(0, 0%, 100%);
+
+    --input-color: hsl(0, 0%, 52%);
+    --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
 
 body {
     font-family: var(--family);
     font-weight: var(--fw-light);
-    color: var(--text-color);
     background-color: var(--bg-color);
+    color: var(--text-color);
 }
