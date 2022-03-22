@@ -1,10 +1,11 @@
 import React from 'react';
+import Controls from "../../components/Controls/Controls";
 
 const HomePage = () => {
     return (
-        <div>
-          home
-        </div>
+        <>
+            <Controls />
+        </>
     );
 };
 
