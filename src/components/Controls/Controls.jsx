@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import Search from "../Search/Search";
 import Select from "../Select/Select";
 import {Wrapper} from "./controls-styling";
@@ -15,9 +15,11 @@ const Controls = () => {
     const [region, setRegion] = useState('');
     const [search, setSearch] = useState('');
 
+    const onSearch = useCallback((e) => setSearch(e.target.value), []);
+
     return (
         <Wrapper>
-            <Search />
+            <Search search={search} onSearch={onSearch} />
             <Select
                 placeholder="Filter by region"
                 isSearchable={false}

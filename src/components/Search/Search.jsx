@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Input, Wrapper} from "./search-styling";
 import {IoSearch} from 'react-icons/io5';
 
-const Search = () => {
+const Search = ({search, onSearch}) => {
+
     return (
         <Wrapper>
             <IoSearch />
-            <Input />
+            <Input value={search} onChange={onSearch} />
         </Wrapper>
     );
 };
 
-export default Search;
+export default memo(Search);
