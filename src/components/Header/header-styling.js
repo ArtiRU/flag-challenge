@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from 'react-router-dom';
 
 export const StyledHeader = styled.header`
     background-color: var(--bg-color);
@@ -12,12 +13,15 @@ export const Wrapper = styled.div`
     align-items: center;
 `;
 
-export const Title = styled.a`
+export const Title = styled(Link).attrs({
+    to: '/'
+})`
     color: var(--text-color);
     font-weight: var(--fw-bold);
     font-size: var(--fs-lg);
     cursor: pointer;
     user-select: none;
+    text-decoration: none;
 `;
 
 export const ThemeSwitcher = styled.div`
