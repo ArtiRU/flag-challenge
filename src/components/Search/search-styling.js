@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    width: 80%;
+    flex-basis: 80%;
     display: flex;
     align-items: center;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     background-color: var(--el-color);
+    margin-right: 1rem;
     
     & > svg {
         margin-left: 1rem;
@@ -14,6 +15,7 @@ export const Wrapper = styled.div`
     
     @media(max-width: 767px) {
         width: 100%;
+        margin-right: 0;
     }
 `;
 
