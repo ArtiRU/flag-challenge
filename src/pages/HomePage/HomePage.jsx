@@ -5,20 +5,28 @@ import useCountries from "../../hooks/useCountries";
 import List from "../../components/List/List";
 import Card from "../../components/Card/Card";
 import {ALL_COUNTRY} from "../../utils/consts";
+import useFilter from "../../hooks/useFilter";
 
 const HomePage = () => {
     const {countries, setCountries} = useCountries();
+    const {filtered, onFilter} = useFilter();
 
     useEffect(() => {
-        api.get(ALL_COUNTRY).then(({data}) => setCountries(data));
+        if (!countries.length) {
+            api.get(ALL_COUNTRY).then(({data}) => setCountries(data));
+        }
     }, []);
+
+    useEffect(() => {
+        onFilter();
+    },[countries])
 
     return (
         <>
-            <Controls />
+            <Controls onFilter={onFilter} />
             <List>
                 {
-                    countries.map(c => <Card key={c.name} {...c} />)
+                    filtered.map(c => <Card key={c.name} {...c} />)
                 }
             </List>
         </>
