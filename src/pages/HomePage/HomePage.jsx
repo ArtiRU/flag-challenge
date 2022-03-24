@@ -19,7 +19,7 @@ const HomePage = () => {
 
     useEffect(() => {
         onFilter();
-    },[countries])
+    }, [countries]);
 
     return (
         <>

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import Search from "../Search/Search";
 import Select from "../Select/Select";
 import {Wrapper} from "./controls-styling";
@@ -35,4 +35,4 @@ const Controls = ({onFilter}) => {
     );
 };
 
-export default Controls;
+export default memo(Controls);

@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import {useCallback, useState} from 'react';
 import useCountries from "./useCountries";
 
 const useFilter = () => {
     const {countries} = useCountries();
     const [filtered, setFiltered] = useState([]);
 
-    const onFilter = (search, region) => {
+    const onFilter = useCallback((search, region) => {
         let data = [...countries];
         if (search) {
             data = data.filter(d => d.name.toLowerCase().includes(search.toLowerCase()));
@@ -14,7 +14,7 @@ const useFilter = () => {
             data = data.filter(d => d.region.includes(region));
         }
         setFiltered(data);
-    };
+    }, [countries]);
 
 
     return {
