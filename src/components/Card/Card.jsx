@@ -8,7 +8,7 @@ const Card = ({flag, population, name, region, capital}) => {
     const navigate = useNavigate();
     const localPopulation = population.toLocaleString().replace(/\s/g, ',');
 
-    const onCardClick = () => navigate(searchByCountry(name));
+    const onCardClick = () => navigate('country/' + name);
 
     return (
         <Wrapper onClick={onCardClick}>
