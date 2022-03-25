@@ -1,12 +1,12 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import {CardBody, CardImage, CardInfo, Title, Wrapper} from "./card-styling";
-import {searchByCountry} from '../../api/endpoints';
+import {formatPopulation} from "../../utils/formatters";
 
 
 const Card = ({flag, population, name, region, capital}) => {
     const navigate = useNavigate();
-    const localPopulation = population.toLocaleString().replace(/\s/g, ',');
+    const localPopulation = formatPopulation(population);
 
     const onCardClick = () => navigate('country/' + name);
 
