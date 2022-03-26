@@ -8,7 +8,10 @@ const Card = ({flag, population, name, region, capital}) => {
     const navigate = useNavigate();
     const localPopulation = formatPopulation(population);
 
-    const onCardClick = () => navigate('country/' + name);
+    const onCardClick = () => {
+        navigate('country/' + name);
+        document.title = name;
+    };
 
     return (
         <Wrapper onClick={onCardClick}>
