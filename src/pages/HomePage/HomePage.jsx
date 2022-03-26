@@ -4,7 +4,7 @@ import api from '../../api/config';
 import useCountries from "../../hooks/useCountries";
 import List from "../../components/List/List";
 import Card from "../../components/Card/Card";
-import {ALL_COUNTRY} from "../../utils/consts";
+import {allCountry} from "../../api/endpoints";
 import useFilter from "../../hooks/useFilter";
 
 const HomePage = () => {
@@ -13,7 +13,7 @@ const HomePage = () => {
 
     useEffect(() => {
         if (!countries.length) {
-            api.get(ALL_COUNTRY).then(({data}) => setCountries(data));
+            api.get(allCountry).then(({data}) => setCountries(data));
         }
     }, []);
 

@@ -14,6 +14,17 @@ export const CardImage = styled.img`
     object-fit: cover;
     box-shadow: var(--shadow);
     object-position: center;
+    
+    @media(max-width: 1024px){
+        height: 250px;
+    }
+    
+    @media(max-width: 767px){
+        height: 300px;
+    }
+    }@media(max-width: 400px){
+        height: 150px;
+    }
 `;
 
 

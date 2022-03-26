@@ -1,12 +1,20 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import {CardBody, CardImage, CardInfo, Title, Wrapper} from "./card-styling";
+import {formatPopulation} from "../../utils/formatters";
 
 
 const Card = ({flag, population, name, region, capital}) => {
-    const localPopulation = population.toLocaleString().replace(/\s/g, ',');
+    const navigate = useNavigate();
+    const localPopulation = formatPopulation(population);
+
+    const onCardClick = () => {
+        navigate('country/' + name);
+        document.title = name;
+    };
 
     return (
-        <Wrapper>
+        <Wrapper onClick={onCardClick}>
             <CardImage src={flag} alt={name} />
             <CardBody>
                 <Title>{name}</Title>
