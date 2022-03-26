@@ -28,8 +28,6 @@ const DetailsInfo = ({topLevelDomain = [], currencies = [], languages = [], bord
         {key: 'Capital', value: capital},
     ];
 
-    console.log(currencies);
-
     return (
         <Wrapper>
             <InfoImg src={flag} alt={name} />
