@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     InfoImg,
     Title,
@@ -11,14 +11,24 @@ import {
     Tag,
     Wrapper
 } from "./detailsInfo-styling";
+import api from '../../api/config';
 import {formatNumber, formatPopulation} from "../../utils/formatters";
+import {listOfCodes} from "../../api/endpoints";
+import {useNavigate} from "react-router-dom";
 
 const DetailsInfo = ({topLevelDomain = [], currencies = [], languages = [], borders = [], ...props}) => {
+    const [neighbors, setNeighbors] = useState([]);
+
+    const navigate = useNavigate();
     const {
         name, nativeName, capital, population, region, flag, subregion
     } = props;
 
     const localPopulation = formatPopulation(population);
+    const onNeighborsClick = (name) => {
+        navigate('/country/' + name);
+        document.title = name;
+    }
 
     const info = [
         {key: 'Native Name', value: nativeName},
@@ -27,6 +37,12 @@ const DetailsInfo = ({topLevelDomain = [], currencies = [], languages = [], bord
         {key: 'Sub Region', value: subregion},
         {key: 'Capital', value: capital},
     ];
+
+    useEffect(() => {
+        if (borders.length) {
+            api.get(listOfCodes(borders)).then(({data}) => setNeighbors(data.map(c => c.name)));
+        }
+    }, [borders]);
 
     return (
         <Wrapper>
@@ -56,7 +72,7 @@ const DetailsInfo = ({topLevelDomain = [], currencies = [], languages = [], bord
                         <ListItem>
                             <StyledBold>Currency: &nbsp;</StyledBold>
                             {
-                                currencies.map((c,index) => (
+                                currencies.map((c, index) => (
                                     <span key={c.code}>{formatNumber(c.name, index, currencies.length)} &nbsp;</span>
                                 ))
                             }
@@ -76,7 +92,7 @@ const DetailsInfo = ({topLevelDomain = [], currencies = [], languages = [], bord
                         {
                             !borders.length ? (<StyledBold>There is no borders countries</StyledBold>) : (
                                 <TagGroup>
-                                    {borders.map(b => (<Tag key={b}>{b}</Tag>))}
+                                    {neighbors.map(n => (<Tag key={n} onClick={() => onNeighborsClick(n)}>{n}</Tag>))}
                                 </TagGroup>
                             )
                         }

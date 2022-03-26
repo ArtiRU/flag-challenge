@@ -7,7 +7,7 @@ import Details from "../../pages/Details/Details";
 const AppRouter = () => {
     return (
         <Routes>
-            <Route path='/' element={<HomePage />} />
+            <Route index path='/' element={<HomePage />} />
             <Route path='/country/:name' element={<Details />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
