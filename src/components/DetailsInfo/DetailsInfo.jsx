@@ -11,19 +11,24 @@ import {
     Tag,
     Wrapper
 } from "./detailsInfo-styling";
+import {formatNumber, formatPopulation} from "../../utils/formatters";
 
 const DetailsInfo = ({topLevelDomain = [], currencies = [], languages = [], borders = [], ...props}) => {
     const {
         name, nativeName, capital, population, region, flag, subregion
     } = props;
 
+    const localPopulation = formatPopulation(population);
+
     const info = [
         {key: 'Native Name', value: nativeName},
-        {key: 'Population', value: population},
+        {key: 'Population', value: localPopulation},
         {key: 'Region', value: region},
         {key: 'Sub Region', value: subregion},
         {key: 'Capital', value: capital},
     ];
+
+    console.log(currencies);
 
     return (
         <Wrapper>
@@ -53,16 +58,16 @@ const DetailsInfo = ({topLevelDomain = [], currencies = [], languages = [], bord
                         <ListItem>
                             <StyledBold>Currency: &nbsp;</StyledBold>
                             {
-                                currencies.map(c => (
-                                    <span key={c.code}>{c.name} &nbsp;</span>
+                                currencies.map((c,index) => (
+                                    <span key={c.code}>{formatNumber(c.name, index, currencies.length)} &nbsp;</span>
                                 ))
                             }
                         </ListItem>
                         <ListItem>
                             <StyledBold>Language: &nbsp;</StyledBold>
                             {
-                                languages.map(l => (
-                                    <span key={l.name}>{l.name}&nbsp;</span>
+                                languages.map((l, index) => (
+                                    <span key={l.name}>{formatNumber(l.name, index, languages.length)}&nbsp;</span>
                                 ))
                             }
                         </ListItem>
