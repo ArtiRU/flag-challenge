@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/flag-challenge/static/css/main.d2ead12a.css",
-    "main.js": "/flag-challenge/static/js/main.41fc4c93.js",
-    "static/media/NunitoSans-SemiBold.svg": "/flag-challenge/static/media/NunitoSans-SemiBold.8e313ad7356cdaa0eaf4.svg",
-    "static/media/NunitoSans-Bold.svg": "/flag-challenge/static/media/NunitoSans-Bold.6f082b9a0bb8222d5009.svg",
-    "static/media/NunitoSans-ExtraBold.svg": "/flag-challenge/static/media/NunitoSans-ExtraBold.348e27a62ba7a0ce63c5.svg",
-    "index.html": "/flag-challenge/index.html",
-    "main.d2ead12a.css.map": "/flag-challenge/static/css/main.d2ead12a.css.map",
-    "main.41fc4c93.js.map": "/flag-challenge/static/js/main.41fc4c93.js.map"
+    "main.css": "/static/css/main.345d532c.css",
+    "main.js": "/static/js/main.05b84150.js",
+    "static/media/NunitoSans-SemiBold.svg": "/static/media/NunitoSans-SemiBold.8e313ad7356cdaa0eaf4.svg",
+    "static/media/NunitoSans-Bold.svg": "/static/media/NunitoSans-Bold.6f082b9a0bb8222d5009.svg",
+    "static/media/NunitoSans-ExtraBold.svg": "/static/media/NunitoSans-ExtraBold.348e27a62ba7a0ce63c5.svg",
+    "index.html": "/index.html",
+    "main.345d532c.css.map": "/static/css/main.345d532c.css.map",
+    "main.05b84150.js.map": "/static/js/main.05b84150.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2ead12a.css",
-    "static/js/main.41fc4c93.js"
+    "static/css/main.345d532c.css",
+    "static/js/main.05b84150.js"
   ]
 }
